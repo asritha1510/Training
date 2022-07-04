@@ -84,7 +84,7 @@ public class Main {
 				if(e[srch].getId()!=0)
 				System.out.println(e[srch].getId()+" "+e[srch].getName()+" "+e[srch].getOrganization()+" "+e[srch].getSalary());
 				else
-			    System.out.println("Invalid");
+					throw new NoSuchRecordException("please enter valid employee id that existed");
 				break;
 			case 6:
 				exit=false;	
