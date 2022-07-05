@@ -4,16 +4,11 @@ import java.util.*;
 public class Main {
 	public static void main(String args[]) {
 		Employee e[]=new Employee[5];
-		Employee e1=new Employee();
-		Employee e2=new Employee();
-		Employee e3=new Employee();
-		Employee e4=new Employee();
-		Employee e5=new Employee();
 		Scanner sc=new Scanner(System.in);
 		int ch,a=0;
 		boolean exit=true;
-		
-		e[0]=e1; e[1]=e2; e[2]=e3; e[3]=e4; e[4]=e5;
+	
+		e[0]=new Employee();
 		e[0].setId(1);
 		e[0].setName("Asri");
 		e[0].setOrganization("FTD");
@@ -26,6 +21,7 @@ public class Main {
 			case 1:
 				System.out.println("Add Employee");
 				a++;
+				e[a]=new Employee();
 				System.out.println("Enter id");
 				int id =sc.nextInt();
 				e[a].setId(id);
@@ -40,8 +36,8 @@ public class Main {
 				e[a].setSalary(sal);
 				break;         
 			case 2: 
-				for(int i=0;i<e.length;i++) {
-			    if(e[i].getId()!=0)
+				for(int i=0;i<=a;i++) {
+			 
 				System.out.println(e[i].getId()+" "+e[i].getName()+" "+e[i].getOrganization()+" "+e[i].getSalary());
 				}
 				break;
