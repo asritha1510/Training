@@ -2,7 +2,7 @@ package mypackage;
 
 @SuppressWarnings("serial")
 public class EmployeeAlreadyExists extends Exception {
-	EmployeeAlreadyExists(String s)
+	public EmployeeAlreadyExists(String s)
 	{
 		super(s);
 	}

@@ -2,7 +2,7 @@ package mypackage;
 
 @SuppressWarnings("serial")
 public class NoSuchRecordException extends RuntimeException {
-	NoSuchRecordException(String s)
+	public NoSuchRecordException(String s)
 	{
 		super(s);
 	}
