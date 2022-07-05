@@ -19,6 +19,7 @@ public class Main {
 			ch=sc.nextInt();
 			switch(ch) {
 			case 1:
+				try {
 				System.out.println("Add Employee");
 				a++;
 				e[a]=new Employee();
@@ -41,6 +42,10 @@ public class Main {
 				System.out.println("Enter salary");
 				int sal=sc.nextInt();
 				e[a].setSalary(sal);
+				}
+				catch(Exception ee) {
+					System.out.println("Employee id already exists");
+				}
 				break;         
 			case 2: 
 				for(int i=0;i<=a;i++) {
@@ -81,6 +86,7 @@ public class Main {
 				e[del].setId(0); e[del].setName(null);e[del].setOrganization(null);e[del].setSalary(0);	
 				break;
 			case 5:
+				try {
 				System.out.println("Enter id you want to search");
 				int srch=sc.nextInt();
 				srch-=1;
@@ -88,7 +94,11 @@ public class Main {
 				System.out.println(e[srch].getId()+" "+e[srch].getName()+" "+e[srch].getOrganization()+" "+e[srch].getSalary());
 				else
 					throw new NoSuchRecordException("please enter valid employee id that existed");
+				}catch(Exception ee) {
+					System.out.println("invalid employee id");
+				}
 				break;
+				
 			case 6:
 				exit=false;	
 			}
