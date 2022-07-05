@@ -2,7 +2,7 @@ package mypackage;
 import java.util.*;
 
 public class Main {
-	public static void main(String args[]) {
+	public static void main(String args[]) throws EmployeeAlreadyExists {
 		Employee e[]=new Employee[5];
 		Scanner sc=new Scanner(System.in);
 		int ch,a=0;
@@ -24,7 +24,14 @@ public class Main {
 				e[a]=new Employee();
 				System.out.println("Enter id");
 				int id =sc.nextInt();
-				e[a].setId(id);
+				for(int i=0;i<=a;i++)
+				{
+					if(id==e[i].getId())
+						throw new EmployeeAlreadyExists("Employee already exists");
+					else
+						e[a].setId(id);	
+				}
+				
 				System.out.println("Enter name");
 				String name =sc.next();
 				e[a].setName(name);
